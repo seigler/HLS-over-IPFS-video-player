@@ -1,5 +1,7 @@
 Based heavily on the [browser video streaming](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-video-streaming) example from JS-IPFS.
 
+## How to use
+
 Accepts three query parameters:
 
 - `hash`: required. The IPFS hash of a folder containing an HLS playlist and its files.
@@ -20,3 +22,12 @@ The output from the `ipfs` command is the hash to use with this page.
 Example URL:
 
 http://ipfs.io/ipfs/Qma8m84bDQGfSPEZreNg4ZKKTXJAbcFsrkcjgajGmXkXjs/index.html?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
+
+## How to build from source
+
+### NPM commands
+
+- start: alias, _serve_
+- serve: run & navigate to a live-build server on localhost port 8888
+- build: build & output to output folder dist (overwrites, doesn't delete)
+- clean: remove caches and dist folder
