@@ -19,7 +19,7 @@ ffmpeg -i "../$1" -profile:v baseline -level 3.0 -start_number 0 -hls_time 5 -hl
 popd
 ```
 
-(If you add that to your path as `recode-to-hls` you can convert a folder of MP4 files with the command `ls *.mp4 -1 | xargs -d "\n" recode-to-hls`.)
+(If you add that to your path as `recode-to-hls` you can convert a folder of MP4 files with the command `ls *.mp4 -1 | xargs -d "\n" -n1 recode-to-hls`.)
 
 A folder produced this way can be posted to IPFS, and that hash is used in this page URL. Here are two hashes created following this format:
 
