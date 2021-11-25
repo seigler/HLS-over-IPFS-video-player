@@ -1,4 +1,4 @@
-Based heavily on the [browser video streaming](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-video-streaming) example from JS-IPFS.
+[Live link](http://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/)
 
 ## How to use
 
@@ -30,9 +30,9 @@ The output from the `ipfs` command is the hash to use with this page.
 
 Two example URLs:
 
-http://ipfs.io/ipfs/QmQkJRPbmqcYeQcyN6mFmSYGoLWT7731GggCrTKo9tHBqF/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
+http://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
 
-https://ipfs.io/ipfs/QmQkJRPbmqcYeQcyN6mFmSYGoLWT7731GggCrTKo9tHBqF/?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L&title=Royal+Path+001+-+What+is+the+Royal+Path%3F
+https://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L&title=Royal+Path+001+-+What+is+the+Royal+Path%3F
 
 ## How to build from source
 
@@ -42,3 +42,7 @@ https://ipfs.io/ipfs/QmQkJRPbmqcYeQcyN6mFmSYGoLWT7731GggCrTKo9tHBqF/?hash=QmYzdc
 - serve: run & navigate to a live-build server on localhost port 8888
 - build: build & output to output folder dist (overwrites, doesn't delete)
 - clean: remove caches and dist folder
+
+---
+
+Based heavily on the [browser video streaming](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-video-streaming) example from JS-IPFS.

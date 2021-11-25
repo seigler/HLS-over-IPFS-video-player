@@ -19,7 +19,13 @@ function showStatus(message, hide = false) {
   status.innerText = message
 }
 
+function setBodyHeight() {
+  document.body.style.height = window.innerHeight + "px"
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
+  setBodyHeight()
+  window.addEventListener('resize', setBodyHeight)
   const hash = getUrlParameter("hash")
   const source = getUrlParameter("source") || 'master.m3u8'
   const title = getUrlParameter("title")
