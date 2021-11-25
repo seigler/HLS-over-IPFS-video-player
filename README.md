@@ -19,9 +19,9 @@ ipfs add -Qr .
 
 The output from the `ipfs` command is the hash to use with this page.
 
-Example URL:
+Two example URLs:
 
-http://ipfs.io/ipfs/Qma8m84bDQGfSPEZreNg4ZKKTXJAbcFsrkcjgajGmXkXjs/index.html?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
+http://ipfs.io/ipfs/QmQkJRPbmqcYeQcyN6mFmSYGoLWT7731GggCrTKo9tHBqF/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
 
 ## How to build from source
 
