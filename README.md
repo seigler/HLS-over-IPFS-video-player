@@ -1,4 +1,4 @@
-[Live link](http://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/)
+[Live link](https://ipfsvideo.cc/)
 
 ## How to use
 
@@ -30,9 +30,9 @@ The output from the `ipfs` command is the hash to use with this page.
 
 Two example URLs:
 
-http://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
+https://ipfsvideo.cc/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny
 
-https://ipfs.io/ipfs/QmVPB6NWWecNp54Tpimp1WzzBFU5fYGBjXgodH2U3jNZHG/?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L&title=Royal+Path+001+-+What+is+the+Royal+Path%3F
+https://ipfsvideo.cc/?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L&title=Royal+Path+001+-+What+is+the+Royal+Path%3F
 
 ## How to build from source
 
