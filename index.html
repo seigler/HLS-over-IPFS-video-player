@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>HLS over IPFS video player</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" />
     <style>
-      * { box-sizing: border-box; }
-      html, body {
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
         padding: 0;
         margin: 0;
       }
@@ -36,7 +39,7 @@
         margin-bottom: -3ex;
       }
       .is-hiding {
-        transform: translateY(-3ex)
+        transform: translateY(-3ex);
       }
       #video {
         display: none;
@@ -47,6 +50,11 @@
         max-width: 80ch;
         padding: 5em;
       }
+      pre {
+        background-color: #ffffff1f;
+        padding: 0.5em;
+        overflow: auto;
+      }
     </style>
 
     <script type="module" defer="" src="./src/index.js"></script>
@@ -56,13 +64,79 @@
     <div id="status"></div>
     <section id="help">
       <h1>HLS over IPFS video player</h1>
-      <p>This is a tool for viewing videos encoded as <a href="https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-video-streaming">HLS</a>. The folder containing this playlist and all its files is uploaded to IPFS, and the hash is provided in the URL as a parameter.</p>
-      <pre>?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L</pre>
-      <p>It also accepts parameters for <code>source</code> filename (default is <code>master.m3u8</code>) and <code>title</code>.
+      <h2 id="how-to-use">
+        <a class="anchor" href="#how-to-use"></a>How to use:
+      </h2>
+      <p>Accepts three query parameters:</p>
+      <ul>
+        <li>
+          <code>hash</code>: required. The IPFS hash of a folder containing an
+          HLS playlist and its files.
+        </li>
+        <li>
+          <code>source</code>: optional, defaults to <code>master.m3u8</code>.
+        </li>
+        <li>
+          <code>title</code>: optional, allows overriding the browser tab title.
+        </li>
+      </ul>
+      <h2 id="usage-examples">
+        <a class="anchor" href="#usage-examples"></a>Usage Examples:
+      </h2>
+      <ul>
+        <li>
+          <a
+            href="https://ipfsvideo.cc/?hash=QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K&title=Big%20Buck%20Bunny"
+            >Big Buck Bunny</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://ipfsvideo.cc/?hash=QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L&title=What+is+the+Royal+Path%3F+-+Royal+Path+001"
+            >What is the Royal Path? - Royal Path 001</a
+          >
+        </li>
+      </ul>
+      <h2 id="how-to-make-compatible-videos">
+        <a class="anchor" href="#how-to-make-compatible-videos"></a>How to make
+        compatible videos:
+      </h2>
+      <p>
+        Here is a Bash script you can use to encode a video into a HLS folder
+        with a playlist:
       </p>
-      <p>Given at least a valid hash, it should play a video in the browser using <a href="https://github.com/ipfs/js-ipfs">JS-IPFS</a> to connect directly to the IPFS network.</p>
+      <pre>#!/usr/bin/env bash
+outdir=${1%.*}
+mkdir &quot;$outdir&quot;
+pushd &quot;$outdir&quot;
+ffmpeg -i &quot;../$1&quot; -profile:v baseline -level 3.0 -start_number 0 -hls_time 5 -hls_list_size 0 -f hls master.m3u8
+popd</pre>
+      <p>
+        (If you add that to your path as <code>recode-to-hls</code> you can
+        convert a folder of MP4 files with the command
+        <code>ls *.mp4 -1 | xargs -d &quot;\n&quot; -n1 recode-to-hls</code>.)
+      </p>
+      <p>
+        A folder produced this way can be posted to IPFS, and that hash is used
+        in this page URL. Here are two hashes created following this format:
+      </p>
+      <ul>
+        <li>
+          <code>QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K</code> - Big Buck
+          Bunny
+        </li>
+        <li>
+          <code>QmYzdc44xBkVgp8aWJW57KprjDs5j2hmN8g7eDqm5pvY8L</code> - Royal
+          Path episode 001
+        </li>
+      </ul>
       <noscript>
-        <p><strong>Since your browser is not executing JavaScript, none of this will work.</strong></p>
+        <p>
+          <strong
+            >Since your browser is not executing JavaScript, none of this will
+            work.</strong
+          >
+        </p>
       </noscript>
     </section>
   </body>
