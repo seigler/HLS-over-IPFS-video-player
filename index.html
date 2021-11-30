@@ -55,13 +55,44 @@
         padding: 0.5em;
         overflow: auto;
       }
+      #contextMenu {
+        position: sticky;
+        background-color: #2f2f2faf;
+        color: white;
+        width: 20em;
+      }
+      #contextMenu > div {
+        border: 1px solid #0000007f;
+        cursor: pointer;
+        padding: 0.5em;
+      }
+      #contextMenu > div + div {
+        border-top: none;
+      }
+      #contextBackground {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .is-hidden {
+        display: none;
+      }
     </style>
 
     <script type="module" defer="" src="./src/index.js"></script>
   </head>
   <body>
-    <video id="video" controls="" autoplay=""></video>
+    <video id="video" controls="" controlsList="nodownload" autoplay=""></video>
     <div id="status"></div>
+    </div>
+    <div class="is-hidden" id="contextBackground">
+      <div id="contextMenu">
+        <div id="contextMenu-url">Copy video URL</div>
+        <div id="contextMenu-urlWithTime">Copy video URL at current time</div>
+      </div>
+    </div>
     <section id="help">
       <h1>HLS over IPFS video player</h1>
       <h2 id="how-to-use">
@@ -79,6 +110,7 @@
         <li>
           <code>title</code>: optional, allows overriding the browser tab title.
         </li>
+        <li><code>time</code>: optional, start the video at this many seconds</li>
       </ul>
       <h2 id="usage-examples">
         <a class="anchor" href="#usage-examples"></a>Usage Examples:

@@ -7,6 +7,7 @@ Accepts three query parameters:
 - `hash`: required. The IPFS hash of a folder containing an HLS playlist and its files.
 - `source`: optional, defaults to `master.m3u8`.
 - `title`: optional, allows overriding the browser tab title.
+- `time`: optional, start video at this many seconds
 
 ## Usage Examples:
 
