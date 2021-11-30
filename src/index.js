@@ -52,26 +52,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       menu.style.top = e.pageY + 'px'
       e.preventDefault()
     }
-    background.onClick = e => {
+    background.onclick = e => {
       e.stopPropagation()
       background.classList.toggle('is-hidden')
     }
     const url = `http://ipfsvideo.cc?hash=${
       hash
     }${
-      title && '&title=' + encodeURIComponent(title)
+      (title && '&title=' + encodeURIComponent(title))||''
     }${
-      source && '&source=' + encodeURIComponent(source)
+      (source && '&source=' + encodeURIComponent(source))||''
     }`
-    document.getElementById('contextMenu-url').onClick = e => {
-      e.stopPropagation()
+    document.getElementById('contextMenu-url').onclick = e => {
       navigator.clipboard.writeText(url)
-      background.classList.toggle('is-hidden')
     }
-    document.getElementById('contextMenu-urlWithTime').onClick = e => {
-      e.stopPropagation()
+    document.getElementById('contextMenu-urlWithTime').onclick = e => {
       navigator.clipboard.writeText(`${url}&time=${Math.round(video.currentTime)}`)
-      background.classList.toggle('is-hidden')
     }
   }
 })
