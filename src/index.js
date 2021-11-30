@@ -5,8 +5,6 @@ import Hls from 'hls.js'
 import HlsjsIpfsLoader from 'hlsjs-ipfs-loader'
 
 document.addEventListener('DOMContentLoaded', async () => {
-  setBodyHeight()
-  window.addEventListener('resize', setBodyHeight)
   const hash = getUrlParameter('hash')
   const source = getUrlParameter('source')
   const title = getUrlParameter('title')
@@ -17,6 +15,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   if (hash) {
     document.getElementById('help').style.display = 'none'
+    setBodyHeight()
+    window.addEventListener('resize', setBodyHeight)
     const video = document.getElementById('video')
     video.style.display = 'block'
     const repoPath = 'ipfs-' + Math.random()
